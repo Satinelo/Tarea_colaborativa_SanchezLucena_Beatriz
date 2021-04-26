@@ -1,0 +1,42 @@
+Algoritmo Lista_Nombres_ordenacion_alfabeticamente
+	escribir sin saltar "ingrese la cantidad de datos:" 
+	leer n
+	
+	Dimension X[n]
+	Para i<-1 Hasta n Con Paso 1 Hacer
+		Escribir "Escriba nombres"
+		Leer A
+		Si i>1 Entonces
+			R=0
+			Para j<-1 Hasta (i-1) Con Paso 1 Hacer
+				Si X[j]=A Entonces
+					R = R + 1
+				Fin Si
+				Si R=0 Entonces
+					X[i]=A
+				Sino
+					Escribir "Nombre Repetido"
+					X[i] = null
+				Fin Si
+			Fin Para	
+		Sino
+			X[i]=A
+		Fin Si
+	Fin Para
+	Para i<-1 Hasta n Con Paso 1 Hacer
+		Para j<-1 Hasta n-1 Con Paso 1 Hacer
+			Si X[j]>X[j+1] Entonces
+				aux=X[j]
+				X[j]=X[j+1]
+				X[j+1]=aux
+			Sino
+			Fin Si
+		Fin Para
+	Fin Para
+	Para i<-1 Hasta n Con Paso 1 Hacer
+		Si X[i] <> null Entonces
+			Escribir "Nombre: ",X[i];
+			Escribir "----------------------------------------"
+		FinSi
+	Fin Para
+FinAlgoritmo
